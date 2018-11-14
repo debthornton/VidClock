@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: url(Deep%20Sea%20Space.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#video-background {
+    position: fixed;
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    opacity: 0.5;
+    z-index: -100;
+}
+
+.main {
+    width: 800px;
+    height: 375px;
+    margin: 0 auto;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+}
+
+.title {
+    width: 96px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 2em;
+}
+
+.clock {
+/*    background: #ebebeb;*/
+    text-align: center;
+    font-size: 95px;
+    height: 100%;
+    font-family: 'Orbitron';
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#am-pm {
+    font-size: 40px;
+    padding-top: 25px;
+}
+
+iframe {
+    position: absolute;
+    bottom: 0;
+    right: -16px;
+    opacity: 0.5;
+}
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 1.1em;
+}
+.footer span a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+}
+
+#github {
+    color: white;
+    
+}
+i {
+    margin-left: 5px;
+}
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>VidClock</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">     
+    </head>
+    <body>
+      
+       <div class="title">VidClock</div>
+       
+        <div class="main">
+            <div class="clock">
+                <span id='hour'></span>
+                <span id='minute'></span>
+                <span id='second'></span>
+                <span id='am-pm'></span>
+            </div>
+        </div>
+        
+       <div class='footer'>
+           <span>Developed by <a href='https://www.debdevelops.com' target="_blank">Deb Thornton</a></span>
+           <a id = 'github' href = "https://github.com/debxdev" target="_blank"><i class="fa fa-github" style="font-size:30px"></i></a>
+       </div>
+        
+        <iframe width="75" height="75" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/282052625&color=%23306375&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        
+        <video autoplay loop id="video-background" muted plays-inline>
+          <source src='fog.mp4' type="video/mp4">
+        </video>
+        
+        <script src="app.js" charset="utf-8"></script>
+    </body>
+    
+</html>
