@@ -31,10 +31,6 @@ function clock() {
 
 setInterval(clock, 100);
 
-var iframeElement = document.querySelector('iframe');
-var widget1 = SC.Widget(iframeElement);
 // widget1 === widget2
 var audio = new Audio('Red Dead Redemption 2 LoFi.mp3');
 audio.play();
-
-widget.play();
