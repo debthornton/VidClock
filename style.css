@@ -96,7 +96,9 @@ iframe {
     font-weight: lighter;
     font-size: 1.1em;
     width: 100%;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .footer span a {
     text-decoration: none;
