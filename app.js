@@ -79,6 +79,8 @@ setInterval(clock, 100);
             widget.pause();
             this.className = "toggle-play play";
         }
+        
+        console.log(state);
     });
 
     document.getElementById("volume-icon").addEventListener("click", function () {
