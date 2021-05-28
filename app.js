@@ -40,6 +40,8 @@ setInterval(clock, 100);
         widget = SC.Widget(widgetIframe);
 
     widget.bind(SC.Widget.Events.READY, function () {
+        widget.seekTo(10000);
+        widget.play();
         widget.bind(SC.Widget.Events.PLAY, function () {
 
         });
