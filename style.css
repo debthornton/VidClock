@@ -83,7 +83,7 @@ body {
 iframe {
     position: absolute;
     bottom: 0;
-    right: -16px;
+/*     right: -16px; */
     opacity: 0.5;
 }
 
@@ -95,6 +95,8 @@ iframe {
     font-family: sans-serif;
     font-weight: lighter;
     font-size: 1.1em;
+    width: 100%;
+    text-align: right;
 }
 .footer span a {
     text-decoration: none;
