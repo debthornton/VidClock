@@ -45,7 +45,7 @@ setInterval(clock, 100);
         });
         
         widget.bind(SC.Widget.Events.FINISH, function () {
-            forwardSwipe();
+//             forwardSwipe();
         });
         // get current level of volume
         widget.getVolume(function (volume) {
@@ -79,56 +79,56 @@ setInterval(clock, 100);
         }
     });
 
-    document.getElementById("volume-icon").addEventListener("click", function () {
-        var mute = 0;
-        var volume = document.getElementById("volume");
-        var volumeNum = document.getElementById("volume-number");
-        var volumeIcon = document.getElementById("volume-icon");
+//     document.getElementById("volume-icon").addEventListener("click", function () {
+//         var mute = 0;
+//         var volume = document.getElementById("volume");
+//         var volumeNum = document.getElementById("volume-number");
+//         var volumeIcon = document.getElementById("volume-icon");
 
-        if (volume.value > 0) {
-            volume.value = mute;
-            volumeNum.textContent = volume.value;
-            widget.setVolume(volume.value);
-            volumeIcon.className = "volume-icon low";
-        } else if (volume.value < 1) {
-            volume.value = 50;
-            volumeNum.textContent = volume.value;
-            widget.setVolume(volume.value);
-            volumeIcon.className = "volume-icon med";
-        }
-    });
+//         if (volume.value > 0) {
+//             volume.value = mute;
+//             volumeNum.textContent = volume.value;
+//             widget.setVolume(volume.value);
+//             volumeIcon.className = "volume-icon low";
+//         } else if (volume.value < 1) {
+//             volume.value = 50;
+//             volumeNum.textContent = volume.value;
+//             widget.setVolume(volume.value);
+//             volumeIcon.className = "volume-icon med";
+//         }
+//     });
 
-    document.getElementById("volume").addEventListener("mousemove", function () {
-        var volumeNum = document.getElementById("volume-number");
-        var volumeIcon = document.getElementById("volume-icon");
-        volumeNum.textContent = volume.value;
-        widget.setVolume(volume.value);
+//     document.getElementById("volume").addEventListener("mousemove", function () {
+//         var volumeNum = document.getElementById("volume-number");
+//         var volumeIcon = document.getElementById("volume-icon");
+//         volumeNum.textContent = volume.value;
+//         widget.setVolume(volume.value);
 
-        if (volume.value < 1) {
-            volumeIcon.className = "volume-icon low";
-        } else if (volume.value < 51) {
-            volumeIcon.className = "volume-icon med";
-        } else {
-            volumeIcon.className = "volume-icon high";
-        }
+//         if (volume.value < 1) {
+//             volumeIcon.className = "volume-icon low";
+//         } else if (volume.value < 51) {
+//             volumeIcon.className = "volume-icon med";
+//         } else {
+//             volumeIcon.className = "volume-icon high";
+//         }
 
-    });
+//     });
     
-    document.getElementById("volume").addEventListener("touchmove", function() {
-        var volumeNum = document.getElementById("volume-number");
-        var volumeIcon = document.getElementById("volume-icon");
-        volumeNum.textContent = volume.value;
-        widget.setVolume(volume.value);
+//     document.getElementById("volume").addEventListener("touchmove", function() {
+//         var volumeNum = document.getElementById("volume-number");
+//         var volumeIcon = document.getElementById("volume-icon");
+//         volumeNum.textContent = volume.value;
+//         widget.setVolume(volume.value);
 
-        if (volume.value < 1) {
-            volumeIcon.className = "volume-icon low";
-        } else if (volume.value < 51) {
-            volumeIcon.className = "volume-icon med";
-        } else {
-            volumeIcon.className = "volume-icon high";
-        }
+//         if (volume.value < 1) {
+//             volumeIcon.className = "volume-icon low";
+//         } else if (volume.value < 51) {
+//             volumeIcon.className = "volume-icon med";
+//         } else {
+//             volumeIcon.className = "volume-icon high";
+//         }
 
-    });
+//     });
 
     document.getElementById("previous-button").addEventListener("click", function() {
         widget.prev();
@@ -138,14 +138,13 @@ setInterval(clock, 100);
             widget.isPaused(function (response) {
                 if (response === true) {
                     songName.textContent = "Paused: " + currentSound.title;
-                    togglePlay.className = "toggle-play play"
+                    togglePlay.className = "fa fa-play";
                 } else {
                     songName.textContent = "Streaming: " + currentSound.title;
-                    togglePlay.className = "toggle-play pause"
+                    togglePlay.className = "fa fa-pause";
                 }
             });          
         });
-        backwardSwipe();
     });
 
     document.getElementById("next-button").addEventListener("click", function () {
@@ -164,5 +163,4 @@ setInterval(clock, 100);
                 }
             });
         });
-        forwardSwipe();
     });
