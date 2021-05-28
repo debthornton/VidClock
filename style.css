@@ -59,7 +59,9 @@ body {
     color: white;
     font-family: sans-serif;
     font-weight: lighter;
-    font-size: 2em;
+/*     font-size: 2em; */
+    opacity: 0.5;
+    font-size: 24px;
 }
 
 .audio-controls .fa {
