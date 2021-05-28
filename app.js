@@ -36,7 +36,6 @@ setInterval(clock, 100);
 // audio.play();
 
 
-(function () {
     var widgetIframe = document.getElementById("sc-widget"),
         widget = SC.Widget(widgetIframe);
 
@@ -170,4 +169,3 @@ setInterval(clock, 100);
         });
         forwardSwipe();
     });
-}());
