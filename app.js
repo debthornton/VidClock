@@ -71,15 +71,13 @@ setInterval(clock, 100);
         });
 
         var state = this.className;
-        if (state == "toggle-play play") {
+        if (state.includes("toggle-play play")) {
             widget.play();
-            this.className = "toggle-play pause";
+            this.className = "toggle-play pause fa fa-pause";
         } else {
             widget.pause();
-            this.className = "toggle-play play";
+            this.className = "toggle-play play fa fa-play";
         }
-        
-        console.log(state);
     });
 
     document.getElementById("volume-icon").addEventListener("click", function () {
