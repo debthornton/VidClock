@@ -62,6 +62,10 @@ body {
     font-size: 2em;
 }
 
+.audio-controls .fa {
+    font-size: 16px;
+}
+
 .clock {
 /*    background: #ebebeb;*/
     text-align: center;
