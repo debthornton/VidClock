@@ -47,8 +47,8 @@ body {
 .title {
     width: 96px;
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 15px;
+    left: 15px;
     color: white;
     font-family: sans-serif;
     font-weight: lighter;
@@ -82,8 +82,8 @@ iframe {
 
 .footer {
     position: absolute;
-    bottom: 5px;
-    left: 5px;
+    bottom: 15px;
+    left: 15px;
     color: white;
     font-family: sans-serif;
     font-weight: lighter;
@@ -96,10 +96,9 @@ iframe {
 }
 
 #github {
-    color: white;
-    
+    color: white;   
 }
+
 i {
     margin-left: 5px;
 }
-
