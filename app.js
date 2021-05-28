@@ -41,6 +41,7 @@ setInterval(clock, 100);
 
     widget.bind(SC.Widget.Events.READY, function () {
         widget.seekTo(12000);
+
         widget.bind(SC.Widget.Events.PLAY, function () {
 
         });
@@ -54,7 +55,6 @@ setInterval(clock, 100);
         });
         // set new volume level
         widget.setVolume(50);
-        widget.play();
         // get the value of the current position     
     });
 
@@ -137,15 +137,18 @@ setInterval(clock, 100);
         widget.getCurrentSound(function (currentSound) {
             var songName = document.getElementById("song-name");
             var togglePlay = document.getElementById("toggle-play");
-            widget.isPaused(function (response) {
-                if (response === true) {
-                    songName.textContent = "Paused: " + currentSound.title;
-                    togglePlay.className = "fa fa-play";
-                } else {
-                    songName.textContent = "Streaming: " + currentSound.title;
-                    togglePlay.className = "fa fa-pause";
-                }
-            });          
+            widget.seekTo(12000);
+            widget.play();
+            
+//             widget.isPaused(function (response) {
+//                 if (response === true) {
+//                     songName.textContent = "Paused: " + currentSound.title;
+//                     togglePlay.className = "fa fa-play";
+//                 } else {
+//                     songName.textContent = "Streaming: " + currentSound.title;
+//                     togglePlay.className = "fa fa-pause";
+//                 }
+//             });          
         });
     });
 
@@ -154,15 +157,17 @@ setInterval(clock, 100);
         widget.getCurrentSound(function (currentSound) {
             var songName = document.getElementById("song-name");
             var togglePlay = document.getElementById("toggle-play");
+            widget.seekTo(12000);
+            widget.play();
 
-            widget.isPaused(function (response) {
-                if (response === true) {
-                    songName.textContent = "Paused: " + currentSound.title;
-                    togglePlay.className = "toggle-play play"
-                } else {
-                    songName.textContent = "Streaming: " + currentSound.title;
-                    togglePlay.className = "toggle-play pause"
-                }
-            });
+//             widget.isPaused(function (response) {
+//                 if (response === true) {
+//                     songName.textContent = "Paused: " + currentSound.title;
+//                     togglePlay.className = "toggle-play play"
+//                 } else {
+//                     songName.textContent = "Streaming: " + currentSound.title;
+//                     togglePlay.className = "toggle-play pause"
+//                 }
+//             });
         });
     });
