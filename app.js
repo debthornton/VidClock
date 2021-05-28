@@ -64,19 +64,18 @@ setInterval(clock, 100);
                     songName.textContent = "Paused: " + currentSound.title;
                 } else {
                     songName.textContent = "Streaming: " + currentSound.title;
-                    console.log(currentSound);
                 }
             });
 
         });
 
         var state = this.className;
-        if (state.includes("toggle-play play")) {
+        if (state === "fa fa-play") {
             widget.play();
-            this.className = "toggle-play pause fa fa-pause";
+            this.className = "fa fa-pause";
         } else {
             widget.pause();
-            this.className = "toggle-play play fa fa-play";
+            this.className = "fa fa-play";
         }
     });
 
