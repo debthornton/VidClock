@@ -40,6 +40,7 @@ setInterval(clock, 100);
         widget = SC.Widget(widgetIframe);
 
     widget.bind(SC.Widget.Events.READY, function () {
+        
         widget.seekTo(12000);
 
         widget.bind(SC.Widget.Events.PLAY, function () {
@@ -47,15 +48,15 @@ setInterval(clock, 100);
         });
         
         widget.bind(SC.Widget.Events.FINISH, function () {
-//             forwardSwipe();
+            widget.seekTo(12000);
+            widget.play();
         });
         // get current level of volume
         widget.getVolume(function (volume) {
 
         });
         // set new volume level
-        widget.setVolume(50);
-        // get the value of the current position     
+        widget.setVolume(50);   
     });
 
     document.getElementById("toggle-play").addEventListener("click", function () {
