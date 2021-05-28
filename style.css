@@ -57,11 +57,11 @@ body {
     top: 0;
     padding: 15px;
     color: white;
-    font-family: sans-serif;
+    font-family: "Orbitron", sans-serif;
     font-weight: lighter;
 /*     font-size: 2em; */
     opacity: 0.5;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .audio-controls .fa {
