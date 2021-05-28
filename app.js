@@ -32,5 +32,140 @@ function clock() {
 setInterval(clock, 100);
 
 // widget1 === widget2
-var audio = new Audio('Red Dead Redemption 2 LoFi.mp3');
-audio.play();
+// var audio = new Audio('Red Dead Redemption 2 LoFi.mp3');
+// audio.play();
+
+
+(function () {
+    var widgetIframe = document.getElementById("sc-widget"),
+        widget = SC.Widget(widgetIframe);
+
+    widget.bind(SC.Widget.Events.READY, function () {
+        widget.bind(SC.Widget.Events.PLAY, function () {
+
+        });
+        
+        widget.bind(SC.Widget.Events.FINISH, function () {
+            forwardSwipe();
+        });
+        // get current level of volume
+        widget.getVolume(function (volume) {
+
+        });
+        // set new volume level
+        widget.setVolume(50);
+        // get the value of the current position     
+    });
+
+    document.getElementById("toggle-play").addEventListener("click", function () {
+        widget.getCurrentSound(function (currentSound) {
+            var songName = document.getElementById("song-name");
+            widget.isPaused(function (response) {
+                if (response === true) {
+                    songName.textContent = "Paused: " + currentSound.title;
+                } else {
+                    songName.textContent = "Streaming: " + currentSound.title;
+                    console.log(currentSound);
+                }
+            });
+
+        });
+
+        var state = this.className;
+        if (state == "toggle-play play") {
+            widget.play();
+            this.className = "toggle-play pause";
+        } else {
+            widget.pause();
+            this.className = "toggle-play play";
+        }
+    });
+
+    document.getElementById("volume-icon").addEventListener("click", function () {
+        var mute = 0;
+        var volume = document.getElementById("volume");
+        var volumeNum = document.getElementById("volume-number");
+        var volumeIcon = document.getElementById("volume-icon");
+
+        if (volume.value > 0) {
+            volume.value = mute;
+            volumeNum.textContent = volume.value;
+            widget.setVolume(volume.value);
+            volumeIcon.className = "volume-icon low";
+        } else if (volume.value < 1) {
+            volume.value = 50;
+            volumeNum.textContent = volume.value;
+            widget.setVolume(volume.value);
+            volumeIcon.className = "volume-icon med";
+        }
+    });
+
+    document.getElementById("volume").addEventListener("mousemove", function () {
+        var volumeNum = document.getElementById("volume-number");
+        var volumeIcon = document.getElementById("volume-icon");
+        volumeNum.textContent = volume.value;
+        widget.setVolume(volume.value);
+
+        if (volume.value < 1) {
+            volumeIcon.className = "volume-icon low";
+        } else if (volume.value < 51) {
+            volumeIcon.className = "volume-icon med";
+        } else {
+            volumeIcon.className = "volume-icon high";
+        }
+
+    });
+    
+    document.getElementById("volume").addEventListener("touchmove", function() {
+        var volumeNum = document.getElementById("volume-number");
+        var volumeIcon = document.getElementById("volume-icon");
+        volumeNum.textContent = volume.value;
+        widget.setVolume(volume.value);
+
+        if (volume.value < 1) {
+            volumeIcon.className = "volume-icon low";
+        } else if (volume.value < 51) {
+            volumeIcon.className = "volume-icon med";
+        } else {
+            volumeIcon.className = "volume-icon high";
+        }
+
+    });
+
+    document.getElementById("previous-button").addEventListener("click", function() {
+        widget.prev();
+        widget.getCurrentSound(function (currentSound) {
+            var songName = document.getElementById("song-name");
+            var togglePlay = document.getElementById("toggle-play");
+            widget.isPaused(function (response) {
+                if (response === true) {
+                    songName.textContent = "Paused: " + currentSound.title;
+                    togglePlay.className = "toggle-play play"
+                } else {
+                    songName.textContent = "Streaming: " + currentSound.title;
+                    togglePlay.className = "toggle-play pause"
+                }
+            });          
+        });
+        backwardSwipe();
+    });
+
+    document.getElementById("next-button").addEventListener("click", function () {
+        widget.next();
+        widget.getCurrentSound(function (currentSound) {
+            var songName = document.getElementById("song-name");
+            var togglePlay = document.getElementById("toggle-play");
+
+            widget.isPaused(function (response) {
+                if (response === true) {
+                    songName.textContent = "Paused: " + currentSound.title;
+                    togglePlay.className = "toggle-play play"
+                } else {
+                    songName.textContent = "Streaming: " + currentSound.title;
+                    togglePlay.className = "toggle-play pause"
+                }
+            });
+        });
+        forwardSwipe();
+    });
+}());
