@@ -15,6 +15,12 @@ html {
 body {
     overflow-y: hidden;
     overflow-x: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: transparent;
 }
 
 #video-background {
@@ -30,26 +36,26 @@ body {
 }
 
 .main {
-    width: 800px;
-    height: 375px;
+    width: 100%;
+/*     height: 375px; */
     margin: 0 auto;
     padding: 30px;
-    position: absolute;
+/*     position: absolute;
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-     transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
 }
 
 .title {
     width: 100%;
 /*     width: 96px; */
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 0;
+    padding: 15px;
     color: white;
     font-family: sans-serif;
     font-weight: lighter;
@@ -83,8 +89,8 @@ iframe {
 
 .footer {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
+    bottom: 0;
+    padding: 15px;
     color: white;
     font-family: sans-serif;
     font-weight: lighter;
